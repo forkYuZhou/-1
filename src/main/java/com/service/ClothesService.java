@@ -1,5 +1,6 @@
 package com.service;
 
+import com.exception.ClothesException;
 import com.model.ClothesModel;
 
 import java.util.List;
@@ -13,5 +14,5 @@ public interface ClothesService {
      * 获取列表
      * @return
      */
-    List<ClothesModel> getClothesList();
+    List<ClothesModel> getClothesList() throws  Exception;
 }

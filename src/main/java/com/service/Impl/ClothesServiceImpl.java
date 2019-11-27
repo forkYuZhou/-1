@@ -1,5 +1,7 @@
 package com.service.Impl;
 
+import com.exception.BusinessErrorCode;
+import com.exception.ClothesException;
 import com.mapper.ClothesMapper;
 import com.model.ClothesModel;
 import com.service.ClothesService;
@@ -20,8 +22,12 @@ public class ClothesServiceImpl implements ClothesService {
     private ClothesMapper clothesMapper;
 
     @Override
-    public List<ClothesModel> getClothesList() {
+    public List<ClothesModel> getClothesList() throws Exception {
         List<ClothesModel> clothesList = clothesMapper.getClothesList();
+        if (clothesList.isEmpty()) {
+            throw new ClothesException(BusinessErrorCode.CLUTHER_IS_NULL
+                    .getReasonPhrase());
+        }
         return clothesList;
     }
 }

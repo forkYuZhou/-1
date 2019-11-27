@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.exception.ClothesException;
 import com.model.ClothesModel;
 import com.service.ClothesService;
 import io.swagger.annotations.ApiOperation;
@@ -24,8 +25,7 @@ public class ClothesContraller {
 
     @ApiOperation(value = "倚天洗衣列表查询", notes = "倚天洗衣列表查询")
     @GetMapping(value = "/v1/project/list", produces = {"application/json;charset=utf-8"})
-    public ResponseEntity<List<ClothesModel>> getClothesList() {
-
+    public ResponseEntity<List<ClothesModel>> getClothesList() throws Exception {
         return ResponseEntity.ok(clothesService.getClothesList());
     }
 
