@@ -1,7 +1,7 @@
 server:
-  contextPath:  /kuier-clothes
+  servlet:
+     context-path: /kuier-clothes
   port: 8091
-
 
 spring:
   datasource:
@@ -12,5 +12,6 @@ spring:
 mybatis:
   mapper-locations: classpath*:**/mapper/*Mapper.xml
   type-aliases-package: com.clothes.*.domain
+
 # configuration:
 #    cache-enabled: true
